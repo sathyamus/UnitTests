@@ -2,6 +2,8 @@ package com.snsystems;
 
 import static org.junit.Assert.assertEquals;
 
+import static org.assertj.core.api.Assertions.*;
+
 import org.assertj.core.api.SoftAssertions;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -26,13 +28,13 @@ public class AssertUnitTest {
 
 	@Before
 	public void setup() {
-		System.out.println("\nsetting up resources");
+		System.out.println("\nsetting up resources on every test");
 		arithmeticService = new ArithmeticService();
 	}
 
 	@After
 	public void cleanup() {
-		System.out.println("cleaning resources");
+		System.out.println("cleaning resources on every test");
 	}
 
 	@Ignore
@@ -42,20 +44,34 @@ public class AssertUnitTest {
 
 	@Test
 	public void testAddition() {
+		// JUnit assertions
 		assertEquals(2, arithmeticService.add(1, 1));
 		assertEquals(3, arithmeticService.add(1, 2));
 		assertEquals(4, arithmeticService.add(1, 3));
+		
+		// fest assertions
 		org.fest.assertions.Assertions.assertThat(arithmeticService.add(1, 1)).isEqualTo(2);
 		org.fest.assertions.Assertions.assertThat(arithmeticService.add(1, 2)).isEqualTo(3);
 		org.fest.assertions.Assertions.assertThat(arithmeticService.add(1, 3)).isEqualTo(4);
+		
+		// assertj assertions
+		assertThat(arithmeticService.add(1, 1)).isNotNull();
+		assertThat(arithmeticService.add(1, 1)).isNotZero();
+		assertThat(arithmeticService.add(1, 1)).isEqualTo(2);
+		assertThat(arithmeticService.add(1, 2)).isEqualTo(3);
+		assertThat(arithmeticService.add(1, 3)).isEqualTo(4);
+		
 	}
 
 	@Test
 	public void testMultiplication() {
+		
+		// JUnit assertions
 		assertEquals(1, arithmeticService.multiply(1, 1));
 		assertEquals(2, arithmeticService.multiply(1, 2));
 		assertEquals(3, arithmeticService.multiply(1, 3));
 		
+		// assertj soft assertions (multi)
 		SoftAssertions softAssertions = new SoftAssertions();
 		softAssertions.assertThat(arithmeticService.multiply(1, 1)).isEqualTo(1);
 		softAssertions.assertThat(arithmeticService.multiply(1, 2)).isEqualTo(2);

@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.snsystems;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,6 +28,8 @@ public class SumOfNumberTest {
 	@Test
 	public void should_check_the_sum_of_number() {
 		
+		assertThat(sumOfNumberService.sum(1)).isEqualTo(1);
+		assertThat(sumOfNumberService.sum(12)).isEqualTo(3);		
 		assertThat(sumOfNumberService.sum(123)).isEqualTo(6);
 		assertThat(sumOfNumberService.sum(1234)).isEqualTo(10);
 		assertThat(sumOfNumberService.sum(12345)).isEqualTo(15);
@@ -39,6 +39,8 @@ public class SumOfNumberTest {
 	@Test
 	public void should_check_the_sum_of_number_diff_impl() {
 		
+		assertThat(sumOfNumberService.sum2(1)).isEqualTo(1);
+		assertThat(sumOfNumberService.sum2(12)).isEqualTo(3);
 		assertThat(sumOfNumberService.sum2(123)).isEqualTo(6);
 		assertThat(sumOfNumberService.sum2(1234)).isEqualTo(10);
 		assertThat(sumOfNumberService.sum2(12345)).isEqualTo(15);

@@ -14,7 +14,25 @@ public class SumOfNumberService {
 
 	public Integer sum2(int number) {
 		int sum = 0;
+		int res = 0;
+		int mod = 0;
+		int div = 0;
+		res = number;
+		for (int i=0 ; i < String.valueOf(number).length() ; i++) {
+			
+			div = res / 10;
+			mod = res % 10;
+			
+			res = div;
+			sum = sum + mod;
+			
+			System.out.println("num : " + div);
+			System.out.println("mod : " + mod);
+			System.out.println("sum : " + sum);
+			
+		}
 		return sum;
+
 	}
 
 }

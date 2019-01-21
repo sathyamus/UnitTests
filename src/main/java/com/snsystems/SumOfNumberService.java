@@ -1,8 +1,5 @@
 package com.snsystems;
 
-import java.util.concurrent.CompletableFuture;
-
-
 public class SumOfNumberService {
 
 	public Integer sum(Integer number) {

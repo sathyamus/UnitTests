@@ -33,17 +33,31 @@ public class SumOfNumberTest {
 		assertThat(sumOfNumberService.sum(123)).isEqualTo(6);
 		assertThat(sumOfNumberService.sum(1234)).isEqualTo(10);
 		assertThat(sumOfNumberService.sum(12345)).isEqualTo(15);
+		assertThat(sumOfNumberService.sum3(13591)).isEqualTo(19);
 		
 	}
 
 	@Test
-	public void should_check_the_sum_of_number_diff_impl() {
+	public void should_check_the_sum_of_number_2() {
 		
 		assertThat(sumOfNumberService.sum2(1)).isEqualTo(1);
 		assertThat(sumOfNumberService.sum2(12)).isEqualTo(3);
 		assertThat(sumOfNumberService.sum2(123)).isEqualTo(6);
 		assertThat(sumOfNumberService.sum2(1234)).isEqualTo(10);
 		assertThat(sumOfNumberService.sum2(12345)).isEqualTo(15);
+		assertThat(sumOfNumberService.sum2(13591)).isEqualTo(19);
+		
+	}
+	
+	@Test
+	public void should_check_the_sum_of_number_3() {
+		
+		assertThat(sumOfNumberService.sum3(1)).isEqualTo(1);
+		assertThat(sumOfNumberService.sum3(12)).isEqualTo(3);
+		assertThat(sumOfNumberService.sum2(123)).isEqualTo(6);
+		assertThat(sumOfNumberService.sum3(1234)).isEqualTo(10);
+		assertThat(sumOfNumberService.sum3(12345)).isEqualTo(15);
+		assertThat(sumOfNumberService.sum3(13591)).isEqualTo(19);
 		
 	}	
 }

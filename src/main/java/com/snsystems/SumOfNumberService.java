@@ -1,5 +1,7 @@
 package com.snsystems;
 
+import java.util.concurrent.CompletableFuture;
+
 
 public class SumOfNumberService {
 
@@ -26,13 +28,24 @@ public class SumOfNumberService {
 			res = div;
 			sum = sum + mod;
 			
-			System.out.println("num : " + div);
-			System.out.println("mod : " + mod);
-			System.out.println("sum : " + sum);
+			// System.out.println("num : " + div);
+			// System.out.println("mod : " + mod);
+			// System.out.println("sum : " + sum);
 			
 		}
 		return sum;
 
+	}
+
+	public Integer sum3(int number) {
+		int sum = 0;
+		String numberAsString = String.valueOf(number);
+		for (int i=0 ; i < numberAsString.length() ; i++) {
+			// System.out.println(numberAsString.charAt(i));
+			// System.out.println(Integer.valueOf(numberAsString.charAt(i)+""));
+			sum = sum + Integer.valueOf(numberAsString.charAt(i)+"");
+		}
+		return sum;
 	}
 
 }

@@ -30,6 +30,13 @@ public class EndOfMonthServiceTest {
 	}
 
 	@Test
+	public void should_find_end_of_month_dates_from_given_dates2() {
+		
+		List<String> dates = Arrays.asList("01-01-2018", "05-01-2018", "31-01-2018", "01-02-2018", "28-02-2018", "13-04-2018", "30-04-2018");
+		assertThat(endOfMonthService.find2(dates)).contains("31-01-2018", "28-02-2018", "30-04-2018");
+	}
+	
+	@Test
 	public void should_return_end_of_month_date_from_given_date() {
 		
 		assertThat(endOfMonthService.getEOM("05-01-2018")).contains("31-01-2018");

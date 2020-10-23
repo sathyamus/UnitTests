@@ -61,7 +61,7 @@ public class AssertUnitTest {
 		assertThat(arithmeticService.add(1, 2)).isEqualTo(3);
 		assertThat(arithmeticService.add(1, 3)).isEqualTo(4);
 		
-		assertThat("Sathyamus").contains("sathya");
+		assertThat("Sathyamus").contains("Sathya");
 		
 	}
 

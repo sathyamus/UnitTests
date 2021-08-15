@@ -2,6 +2,7 @@ package com.snsystems;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -24,5 +25,9 @@ public class SortService {
 		return strings.toString();
 	}
 	
-	
+	public String sortingByIgnoreCase(String[] strings) {
+		Comparator<String> compareToIgnoreCase = String::compareToIgnoreCase;
+		Arrays.sort(strings, compareToIgnoreCase);
+		return Arrays.asList(strings).toString();
+	}	
 }

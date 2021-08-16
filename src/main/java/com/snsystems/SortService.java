@@ -29,5 +29,10 @@ public class SortService {
 		Comparator<String> compareToIgnoreCase = String::compareToIgnoreCase;
 		Arrays.sort(strings, compareToIgnoreCase);
 		return Arrays.asList(strings).toString();
+	}
+	
+	public String sortingByIgnoreCase2(String[] strings) {
+		Arrays.sort(strings, (s1, s2) -> s1.compareToIgnoreCase(s2));
+		return Arrays.asList(strings).toString();
 	}	
 }

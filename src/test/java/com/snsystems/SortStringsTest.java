@@ -23,6 +23,13 @@ public class SortStringsTest {
 	public void should_sort_using_natural_sort() {
 		SortService sortService = new SortService();
 		assertThat(sortService.sortingByNatural("Aa,Bb,Cc,Dd,aa")).isEqualTo("[Aa, Bb, Cc, Dd, aa]");
-	}	
+	}
+	
+	@Test
+	public void sortStringArraysByIgnoreCase2() {
+		SortService sortService = new SortService();
+		String[] strings = {"Aa","Bb","Cc","Dd","aa"};
+		assertThat(sortService.sortingByIgnoreCase2(strings)).isEqualTo("[Aa, aa, Bb, Cc, Dd]");
+	}
 
 }

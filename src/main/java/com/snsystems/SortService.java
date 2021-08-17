@@ -24,6 +24,12 @@ public class SortService {
 		Collections.sort(strings);
 		return strings.toString();
 	}
+
+	public String sortingByNatural(String[] input) {
+		List<String> strings = Arrays.asList(input);
+		Collections.sort(strings);
+		return strings.toString();
+	}
 	
 	public String sortingByIgnoreCase(String[] strings) {
 		Comparator<String> compareToIgnoreCase = String::compareToIgnoreCase;
@@ -34,5 +40,5 @@ public class SortService {
 	public String sortingByIgnoreCase2(String[] strings) {
 		Arrays.sort(strings, (s1, s2) -> s1.compareToIgnoreCase(s2));
 		return Arrays.asList(strings).toString();
-	}	
+	}
 }

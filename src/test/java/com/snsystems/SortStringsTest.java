@@ -32,9 +32,8 @@ public class SortStringsTest {
 
 	@Test
 	public void sortStringArraysByIgnoreCase2() {
-		SortService sortService = new SortService();
 		String[] strings = {"Aa","Bb","Cc","Dd","aa"};
 		assertThat(sortService.sortingByIgnoreCase2(strings)).isEqualTo("[Aa, aa, Bb, Cc, Dd]");
 	}
-	
+
 }

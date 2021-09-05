@@ -18,11 +18,15 @@ public class MockitoSpyVsMockTest {
 	private List<String> mockList = new ArrayList<>();
 	
 	@Spy
-	private List<String> spyList = new ArrayList<>();	
+	private List<String> spyList = new ArrayList<>();
+	
+	@Before
+	public void setup() {
+		MockitoAnnotations.initMocks(this);
+	}
 	
 	@Test
 	public void able_to_mock_and_track_collection() {
-		MockitoAnnotations.initMocks(this);
 		mockList.add("Sathya");
 		Mockito.verify(mockList).add("Sathya");
 		assertThat(mockList).isNotNull();

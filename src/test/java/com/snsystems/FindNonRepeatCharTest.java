@@ -33,7 +33,6 @@ public class FindNonRepeatCharTest {
 	public void findNonRepeatCharLongWay() {
 		assertThat(findNonRepeatCharLongWay("Sathya")).isEqualTo('S');
 		assertThat(findNonRepeatCharLongWay("Naveen")).isEqualTo('a');
-
 	}
 	
 	char findNonRepeatCharLongWay(String input) {

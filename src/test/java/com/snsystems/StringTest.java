@@ -9,8 +9,9 @@ public class StringTest {
 	@Test
 	public void should_return_sum_after_split() {
 		
-		Integer result = sum("3,4");
-		assertThat(result).isEqualTo(7);
+		assertThat(sum("3,4")).isEqualTo(7);
+		assertThat(sum("1,2,3")).isEqualTo(6);
+		assertThat(sum("1,2,3,4")).isEqualTo(10);
 	} 
 	
 	Integer sum(String input) {

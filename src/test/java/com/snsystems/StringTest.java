@@ -15,8 +15,12 @@ public class StringTest {
 		assertThat(calc.sum("3,4")).isEqualTo(7);
 		assertThat(calc.sum("1,2,3")).isEqualTo(6);
 		assertThat(calc.sum("1,2,3,4")).isEqualTo(10);
-	} 
+	}
 	
+	@Test
+	public void should_return_sum_after_split_by_carriage() {
+		assertThat(calc.sum("1,2\n3")).isEqualTo(6);
+	}
 
 
 }

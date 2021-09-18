@@ -43,6 +43,14 @@ public class LambdaTest {
 		
 		assertThat(colors2).hasSize(3);
 		
+		colors2 = new ArrayList<>(Arrays.asList(colors));
+		System.out.println("filter :");
+		Stream<String> filtered = colors2.stream().filter(endingWithE);
+		filtered.forEach(color -> System.out.println("- " + color));
+		
+		// For making re-use of stream, re-creating them
+		filtered = colors2.stream().filter(endingWithE);
+		assertThat(filtered).hasSize(3);
 	}
 
 }

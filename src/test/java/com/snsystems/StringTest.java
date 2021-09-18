@@ -23,4 +23,9 @@ public class StringTest {
 	}
 
 
+	@Test
+	public void concatination() {
+		assertThat(2 + 3 + "Sathya" + 2 + 3).isEqualTo("5Sathya23");
+	}
+
 }

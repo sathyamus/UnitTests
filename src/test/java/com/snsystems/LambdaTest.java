@@ -66,6 +66,19 @@ public class LambdaTest {
 		assertThat(supplier.get()).isEqualTo("Hello");
 		
 	}
-
+	
+	@Test
+	public void consumer() {
+		
+		Consumer<String> consumer = (String input) -> System.out.println(input);
+		consumer = (String input) -> {
+			System.out.println("Inside the Consumer Lambda");
+			System.out.println(input);
+		};
+		consumer.accept("Hello");
+		consumer.accept("Hello World!");
+		
+	}	
+	
 
 }

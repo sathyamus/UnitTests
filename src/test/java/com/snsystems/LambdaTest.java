@@ -4,8 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -15,7 +17,7 @@ import org.junit.Test;
 public class LambdaTest {
 	
 	@Test
-	public void lambda() {
+	public void filterStrings() {
 		
 		String[] colors = {"red", "green", "blue", "orange", "purple", "yellow"	};
 		
@@ -78,7 +80,34 @@ public class LambdaTest {
 		consumer.accept("Hello");
 		consumer.accept("Hello World!");
 		
-	}	
+	}
+	
+	@Test
+	public void filterStringsV2() {
+		
+		String[] colors = {"red", "green", "blue", "orange", "purple", "yellow"	};
+		List<String> colors1 = new ArrayList<>(Arrays.asList(colors));
+		System.out.println("colors Before remove :");
+		assertThat(colors1).hasSize(6);
+		Predicate<String> filterByE = (String input) -> input.endsWith("e");
+		
+		System.out.println("colors After filter :");
+		colors1.removeIf(filterByE);
+		assertThat(colors1).hasSize(3);
+		
+		
+		
+	}
+	
+	@Test
+	public void function() {
+		Function<String[], Integer> length = (String[] input) -> {
+			return input.length;
+		};
+		
+		String[] colors = {"red", "green", "blue", "orange", "purple", "yellow"	};
+		assertThat(length.apply(colors)).isEqualTo(6);
+	}
 	
 
 }

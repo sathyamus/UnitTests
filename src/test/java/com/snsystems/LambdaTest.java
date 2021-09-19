@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -52,5 +53,19 @@ public class LambdaTest {
 		filtered = colors2.stream().filter(endingWithE);
 		assertThat(filtered).hasSize(3);
 	}
+	
+	@Test
+	public void supplier() {
+		Supplier<String> supplier = () -> "Hello";
+		assertThat(supplier.get()).isEqualTo("Hello");
+		
+		supplier = () -> {
+			System.out.println("Inside the Supplier Lambda");
+			return "Hello";
+		};
+		assertThat(supplier.get()).isEqualTo("Hello");
+		
+	}
+
 
 }

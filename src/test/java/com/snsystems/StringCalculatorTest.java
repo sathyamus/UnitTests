@@ -11,5 +11,11 @@ public class StringCalculatorTest {
 		StringCalculator calc = new StringCalculator();
 		assertThat(calc.calculate("")).isEqualTo(0);
 	}
+	
+	@Test
+	public void stringNumberReturnsItsValue() {
+		StringCalculator calc = new StringCalculator();
+		assertThat(calc.calculate("3")).isEqualTo(3);
+	}
 
 }

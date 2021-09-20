@@ -2,14 +2,12 @@ package com.snsystems;
 
 public class StringCalculator {
 	
-	private static String DELIMITER = ",|\n";
 
-	public Integer sum(String input) {
-		String arr[] = input.split(DELIMITER);
-		Integer result = 0;
-		for (String val : arr) {
-			result = result + Integer.valueOf(val);
+
+	public int calculate(String string) {
+		if (string.isEmpty()) {
+			return 0;
 		}
-		return result;
+		return -1;
 	}
 }

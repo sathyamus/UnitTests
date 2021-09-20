@@ -8,8 +8,12 @@ public class StringCalculator {
 		if (checkIfStringEmpty(input)) {
 			return 0;
 		}
-		int number = Integer.parseInt(input);
+		int number = convertStringToInteger(input);
 		return number;
+	}
+
+	private int convertStringToInteger(String input) {
+		return Integer.parseInt(input);
 	}
 
 	private boolean checkIfStringEmpty(String input) {

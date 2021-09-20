@@ -28,5 +28,10 @@ public class StringCalculatorTest {
 	public void commaDelimitedReturnsSum() {
 		assertThat(calc.calculate("1,2")).isEqualTo(3);
 	}
+	
+	@Test
+	public void newLineDelimiteReturnsSum() {
+		assertThat(calc.calculate("2\n3")).isEqualTo(5);
+	}
 
 }

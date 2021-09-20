@@ -2,7 +2,7 @@ package com.snsystems;
 
 public class StringCalculator {
 	
-	private static final String DELIMITER = ",";
+	private static final String DELIMITER = ",|\n";
 
 	public int calculate(String input) {
 		if (checkIfStringEmpty(input)) {

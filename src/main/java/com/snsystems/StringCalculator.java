@@ -2,17 +2,19 @@ package com.snsystems;
 
 public class StringCalculator {
 	
-
+	private static final String DELIMITER = ",";
 
 	public int calculate(String input) {
 		if (checkIfStringEmpty(input)) {
 			return 0;
 		}
+		
 		int sum = 0;
-		String[] inputStrings = input.split(",");
+		String[] inputStrings = input.split(DELIMITER);
 		for (String inputString : inputStrings) {
-			sum = sum + convertStringToInteger(inputString);
+			sum += convertStringToInteger(inputString);
 		}
+		
 		return sum;
 	}
 

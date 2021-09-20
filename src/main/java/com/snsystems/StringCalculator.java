@@ -12,7 +12,11 @@ public class StringCalculator {
 		int sum = 0;
 		String[] inputStrings = input.split(DELIMITER);
 		for (String inputString : inputStrings) {
-			sum += convertStringToInteger(inputString);
+			int number = convertStringToInteger(inputString);
+			if (number > 1000) {
+				continue;
+			}
+			sum += number;
 		}
 		
 		return sum;

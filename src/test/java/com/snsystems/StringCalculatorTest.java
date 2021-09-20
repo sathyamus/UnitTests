@@ -38,5 +38,10 @@ public class StringCalculatorTest {
 	public void multipleDelimiterReturnsSum() {
 		assertThat(calc.calculate("2,3\n4")).isEqualTo(9);
 	}
+	
+	@Test
+	public void ignoreNumberGreaterThanThousand() {
+		assertThat(calc.calculate("2,3\n1005")).isEqualTo(5);
+	}
 
 }

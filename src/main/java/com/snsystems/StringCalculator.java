@@ -2,6 +2,7 @@ package com.snsystems;
 
 public class StringCalculator {
 	
+	private static final int THOUSAND = 1000;
 	private static final String DELIMITER = ",|\n";
 
 	public int calculate(String input) {
@@ -13,13 +14,17 @@ public class StringCalculator {
 		String[] inputStrings = input.split(DELIMITER);
 		for (String inputString : inputStrings) {
 			int number = convertStringToInteger(inputString);
-			if (number > 1000) {
+			if (checkIfNumberGreaterThanThousand(number)) {
 				continue;
 			}
 			sum += number;
 		}
 		
 		return sum;
+	}
+
+	private boolean checkIfNumberGreaterThanThousand(int number) {
+		return number > THOUSAND;
 	}
 
 	private int convertStringToInteger(String input) {

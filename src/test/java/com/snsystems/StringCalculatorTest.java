@@ -23,5 +23,10 @@ public class StringCalculatorTest {
 	public void stringNumberReturnsItsValue() {
 		assertThat(calc.calculate("3")).isEqualTo(3);
 	}
+	
+	@Test
+	public void commaDelimitedReturnsSum() {
+		assertThat(calc.calculate("1,2")).isEqualTo(3);
+	}
 
 }

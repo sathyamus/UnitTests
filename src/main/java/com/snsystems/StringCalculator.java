@@ -8,8 +8,12 @@ public class StringCalculator {
 		if (checkIfStringEmpty(input)) {
 			return 0;
 		}
-		int number = convertStringToInteger(input);
-		return number;
+		int sum = 0;
+		String[] inputStrings = input.split(",");
+		for (String inputString : inputStrings) {
+			sum = sum + convertStringToInteger(inputString);
+		}
+		return sum;
 	}
 
 	private int convertStringToInteger(String input) {

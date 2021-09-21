@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
 import org.junit.Test;
 
@@ -23,4 +24,17 @@ public class ComparatorInLambdaTest {
 		
 	}
 
+	@Test
+	public void compareWithFunction() {
+		
+		List<String> digits = Arrays.asList("one", "two", "three", "four", "five", "six");
+		
+		// sort by length
+		Function<String, Integer> byLength = (String input) -> input.length();
+		Comparator<String> lambdaComparator = Comparator.comparing(byLength);
+		
+		digits.sort(lambdaComparator);
+		assertThat(digits).isEqualTo(Arrays.asList("one", "two", "six", "four", "five", "three"));
+		
+	}
 }

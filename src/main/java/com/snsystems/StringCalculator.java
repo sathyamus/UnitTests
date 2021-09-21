@@ -5,7 +5,8 @@ public class StringCalculator {
 	private static final int THOUSAND = 1000;
 	private static final String DELIMITER = ",|\n";
 
-	public int calculate(String input) {
+	public int calculate(String input) throws Exception {
+		
 		if (checkIfStringEmpty(input)) {
 			return 0;
 		}
@@ -14,6 +15,11 @@ public class StringCalculator {
 		String[] inputStrings = input.split(DELIMITER);
 		for (String inputString : inputStrings) {
 			int number = convertStringToInteger(inputString);
+			
+			if (number < 1) {
+				throw new Exception();
+			}
+			
 			if (checkIfNumberGreaterThanThousand(number)) {
 				continue;
 			}

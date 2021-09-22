@@ -17,8 +17,16 @@ public class LambdaVsInnerClassTest {
 		}
 	}
 	
+	@FunctionalInterface
+	interface CalculatorV3 {
+		String display();
+		
+		String toString();
+	}	
+	
 	@Test
 	public void lambdaImpl() {
+		// lambda expressions
 		Calculator calc = () -> {
 			return "display method Impl from Lambda";
 		};
@@ -41,11 +49,23 @@ public class LambdaVsInnerClassTest {
 
 	@Test
 	public void lambdaImplWithDefaultMethods() {
+		// lambda expressions
 		CalculatorV2 calc = () -> {
 			return "display method Impl from Lambda";
 		};
 		
 		assertThat(calc.display()).isEqualTo("display method Impl from Lambda");
 		assertThat(calc.print()).isEqualTo("print method Impl from CalculatorV2");
+	}
+	
+	@Test
+	public void lambdaImplWithFuctionalInterface() {
+		// lambda expressions
+		CalculatorV3 calc = () -> {
+			return "display method Impl from Lambda";
+		};
+		
+		assertThat(calc.display()).isEqualTo("display method Impl from Lambda");
+		assertThat(calc.toString()).contains("com.snsystems.LambdaVsInnerClassTest$$Lambda");
 	}	
 }

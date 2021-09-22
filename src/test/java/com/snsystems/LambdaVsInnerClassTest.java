@@ -21,6 +21,17 @@ public class LambdaVsInnerClassTest {
 		assertThat(calc.display()).isEqualTo("display method Impl from Lambda");
 	}
 	
-	
+	@Test
+	public void anonymousBlockImpl() {
+		Calculator calc = new Calculator() {
+			
+			@Override
+			public String display() {
+				return "display method Impl from Anonymous Block";
+			}
+		};
+		
+		assertThat(calc.display()).isEqualTo("display method Impl from Anonymous Block");
+	}	
 
 }

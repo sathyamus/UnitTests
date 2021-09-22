@@ -10,7 +10,12 @@ public class LambdaVsInnerClassTest {
 		String display();
 	}
 	
-
+	interface CalculatorV2 {
+		String display();
+		default String print() {
+			return "print method Impl from CalculatorV2";
+		}
+	}
 	
 	@Test
 	public void lambdaImpl() {
@@ -34,4 +39,13 @@ public class LambdaVsInnerClassTest {
 		assertThat(calc.display()).isEqualTo("display method Impl from Anonymous Block");
 	}	
 
+	@Test
+	public void lambdaImplWithDefaultMethods() {
+		CalculatorV2 calc = () -> {
+			return "display method Impl from Lambda";
+		};
+		
+		assertThat(calc.display()).isEqualTo("display method Impl from Lambda");
+		assertThat(calc.print()).isEqualTo("print method Impl from CalculatorV2");
+	}	
 }

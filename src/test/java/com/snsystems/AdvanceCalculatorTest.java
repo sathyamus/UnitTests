@@ -8,7 +8,15 @@ public class AdvanceCalculatorTest {
 
 	@Test
 	public void performMultiplyOperations() {
-		AdvanceCalculator advCalc = new AdvanceCalculator();
+		
+		CalculatorService calculatorService = new CalculatorService() {
+			
+			@Override
+			public int add(int i, int j) {
+				return 5;
+			}
+		};
+		AdvanceCalculator advCalc = new AdvanceCalculator(calculatorService);
 		assertThat(advCalc.perform(2, 3)).isEqualTo(10);
 	}
 }

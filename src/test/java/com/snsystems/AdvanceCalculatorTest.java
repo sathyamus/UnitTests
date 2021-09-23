@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.internal.verification.Times;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -18,7 +17,7 @@ public class AdvanceCalculatorTest {
 	private CalculatorService calculatorServiceMock = null;
 
 	@Test
-	public void performMultiplyOperations() {
+	public void performMultiplyOperationsWithStub() {
 		
 		calculatorService = new CalculatorService() {
 			
